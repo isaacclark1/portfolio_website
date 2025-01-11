@@ -21,7 +21,9 @@ function App() {
       setTheme(savedTheme);
     } else {
       // Check the user's system theme preference.
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
       setTheme(prefersDark ? "dark" : "light");
     }
   }, []);
@@ -50,7 +52,7 @@ function App() {
         <Outlet />
 
         <footer className="flex sm:justify-end justify-center items-end dark:text-gray-300 text-gray-600 w-full mt-5 flex-grow">
-          <p>&copy; 2024 Isaac Clark</p>
+          <p>&copy; {new Date().getFullYear()} Isaac Clark</p>
         </footer>
       </div>
     </ThemeContext.Provider>
